@@ -1,8 +1,8 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
+const registrationController = require("../../controllers/registrationController")
 
-router.get("/registration", function(req,res){
-    res.send("done")
-})
 
-module.exports = router
+router.post("/registration", registrationController);
+
+module.exports = router;
