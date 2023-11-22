@@ -14,6 +14,19 @@ const userSchema = new Schema({
         type: String,
         required : true
     },
+    otp:{
+        type: String,
+        required : true
+    },
+    verify:{
+        type: Boolean,
+        default: false
+    },
+    role:{
+        type: String,
+        enum:["User","Admin","Merchant"],
+        default: "User"
+    },
 })
 
 module.exports =  mongoose.model('User', userSchema)
