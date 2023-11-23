@@ -59,12 +59,11 @@ let registrationController = async (req, res) => {
 
                 const info = await transporter.sendMail({
                     from: "tanvirmahmudtamim59@gmail.com", // sender address
-                    to: "tamimtanvirmahmud@gmail.com", // list of receivers
+                    to: email, // list of receivers
                     subject: "verify your email", // Subject line
                     // text: "Hello world?", // plain text body
                     html: `<div><h1>Hello Tamim</h1><p>HIIII</p><a href=https://tamim-orebi.netlify.app/ style=padding:10px;background-color:#8a2be2;color:beige;cursor:pointer target=_blank>verify email</a><table style=background-image:url(https://i.ibb.co/PczN9fX/bg.jpg);width:200px;height:200px;color:azure><tr><td>${otp}<td>2<td>3<tr><td>4<td>5<td>6</table></div>`, // html body
                 });
-
                 res.send(user);
             });
         }
